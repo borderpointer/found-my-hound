@@ -60,3 +60,31 @@
 p {
   margin:0;
 }
+
+.messages {
+  padding-top: 15px;
+  width: 25vw;
+  margin: 0 auto;
+}
+
+.alert {
+  font-size:1.25em;
+  text-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  color: #fff;
+}
+
+.alert-success {
+  background-image: none;
+  background-color: #59B11D;
+  border: 1px solid #59B11D;
+  border-radius: 2px;
+}
+
+.alert-danger {
+  background-image: none;
+  background-color:#B11D1D;
+  border: 1px solid #B11D1D;
+  border-radius: 2px;
+}

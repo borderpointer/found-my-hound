@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root 'hello#index'
+  get 'hello/' => 'hello#about'
+
+  devise_for :admins
+  
+  devise_for :users
 
   resources :dogs
 
