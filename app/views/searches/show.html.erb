@@ -1,0 +1,31 @@
+<h1>You Searched For: </h1>
+
+
+<% if @search.search_dogs.empty? %>
+	<div class = "row">
+	  <div class ="col-md-12">
+		<p>No Matches with your criteria...search again!</p>
+		<%= link_to "New Search", new_search_path %>
+	  </div>
+	</div>
+
+<% else %>
+
+
+	<% @search.search_dogs.each do |c| %>
+
+	<div class = "row">
+
+		<div class = "col-md-12">	
+		  
+		  	<%= image_tag c.avatar_url.to_s, width: "300", crop: "fill" %>
+			<%#<%= link_to image_tag(c.avatar_url.to_s, :width => 300, :crop => :fill), search_profile_path %>
+			<h3><%= c.name %></h3>
+
+		</div>
+
+	</div>
+
+	<% end %>
+
+<% end %>

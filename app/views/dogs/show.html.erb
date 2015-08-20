@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @dog.avatar %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @dog.location %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @dog.breed %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @dog.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @dog.gender %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @dog.size %>
+</p>
+
+<p>
+  <strong>Contact email:</strong>
+  <%= @dog.contact_email %>
+</p>
+
+<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<%= link_to 'Back', dogs_path %>

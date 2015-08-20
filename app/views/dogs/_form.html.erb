@@ -1,0 +1,53 @@
+<%= form_for(@dog) do |f| %>
+  <% if @dog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
+
+      <ul>
+      <% @dog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class ="row">
+
+    <div class ="col-md-12">
+
+      <div class="form-horizontal">
+        <%= f.label "Upload a Photo" %><br>
+        <%= f.file_field :avatar %><br><br>
+
+        <%= f.label :remote_image_url, "or image URL" %><br />
+        <%= f.text_field :remote_avatar_url %><br><br>
+
+        <%= f.label :location %><br>
+        <%= f.number_field :location, placeholder: "10001" %><br><br>
+
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br><br>
+
+        <%= f.label :breed %><br>
+        <%= f.text_field :breed %><br><br>
+
+        <%= f.label :age %><br>
+        <%= f.text_field :age %><br><br>
+
+        <%= f.label :gender %><br>
+        <%= f.text_field :gender %><br><br>
+
+        <%= f.label :size %><br>
+        <%= f.text_field :size %><br><br>
+
+        <%= f.label :contact_email %><br>
+        <%= f.text_field :contact_email %><br><br><br>
+
+      </div>
+      <div class="btn">
+        <%= f.submit %>
+      </div>
+
+    </div>
+
+  </div>
+<% end %>

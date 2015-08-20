@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+  <header class = "header">
+    <div class = "container">
+      <div class = "logo"><a href="#"><img src="https://dl.dropbox.com/s/jncnv2w0t7gvjtf/logo_2.png"></a></div> 
+  
+      <nav class = "header-nav">
+        <% if user_signed_in? %>
+        <p> Logged in as <strong><%= current_user.email %></strong></p>
+        <%#= link_to 'Edit profile', edit_user_registration_path%>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+        <a href="#">About</a>
+        <%= link_to "Login", new_user_session_path %>
+        <% end %>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="content">
+
+    <h2 id="tagline">Found My Hound is an online database of adoptable dog that matches you with the perfect partner-in-crime.</h2>
+
+	    <div id="get_started">
+      	<%= link_to "Let's Get Started!", new_user_registration_path %>
+
+      </div>
+
+  </div>
+
+  <video autoplay muted poster="https://dl.dropbox.com/s/ib2ymrxh3xt23b7/test-background-vid-still.png" id="bgvid" loop>
+
+      <source src="https://dl.dropbox.com/s/kmobgmh6lky722s/test-background-vid-short.webm" type="video/webm">
+
+      <source src="https://dl.dropbox.com/s/ptiyyzbbiljlcid/test-background-vid-short.mp4" type="video/mp4">
+
+  </video>
+
+</body>
+
+</html>
+

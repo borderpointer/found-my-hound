@@ -1,0 +1,35 @@
+<h1>Start Your Search</h1>
+
+<div class = "search-container">
+<%= form_for @search do |s| %>
+
+  <div class="field">
+    <%= s.label :zipcode %><br />
+    <%= s.text_field :location, placeholder: "10001" %>
+  </div>
+
+  <div class="field">
+    <%= s.label :breed %><br />
+    <%= s.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= s.label :age_id %><br />
+    <%= s.select :age, options_for_select(@age), :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= s.label :gender_id %><br />
+    <%= s.select :gender, options_for_select(@gender), :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= s.label :size_id %><br />
+    <%= s.select :size, options_for_select(@size), :include_blank => true %>
+  </div>
+
+  <div class="actions"><%= s.submit "Search" %></div>
+
+</div>
+  
+<% end %>

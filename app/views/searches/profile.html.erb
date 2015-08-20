@@ -1,0 +1,12 @@
+<% @search.search_dogs.each do |p| %>
+		<div>	
+			<%= image_tag p.avatar_url.to_s, :width => 300, :crop => :fill%>
+			<h1><%= p.name %></h1>
+			<p>Location: <%= p.location %></p>
+			<p>Breed: <%= p.breed %></p>
+			<p>Age: <%= p.age %></p>
+			<p>Gender: <%= p.gender %></p>
+			<p>Size: <%= p.size %></p>
+			<p>For More Info: <%= link_to "Contact", p.contact_email %></p>
+		</div>
+	<% end %>
