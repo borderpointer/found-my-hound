@@ -1,31 +1,37 @@
-<h1>You Searched For: </h1>
 
 
 <% if @search.search_dogs.empty? %>
-	<div class = "row">
-	  <div class ="col-md-12">
-		<p>No Matches with your criteria...search again!</p>
-		<%= link_to "New Search", new_search_path %>
-	  </div>
+
+	<div class = "general-row">
+	<div class = "general-form show-form">
+		<h2>Your Fluffy Matches:</h2>
+
+		<p class = "no-matches">We found no matches with your criteria... try searching again!</p>
+		<%= button_to "Start a new search", new_search_path, method: :get, :class => "btn btn-primary btn-md" %>
+	</div>
 	</div>
 
 <% else %>
 
+	<h2>Your Fluffy Matches:</h2>
 
 	<% @search.search_dogs.each do |c| %>
 
 	<div class = "row">
 
-		<div class = "col-md-12">	
-		  
-		  	<%= image_tag c.avatar_url.to_s, width: "300", crop: "fill" %>
-			<%#<%= link_to image_tag(c.avatar_url.to_s, :width => 300, :crop => :fill), search_profile_path %>
-			<h3><%= c.name %></h3>
+			<div class="col-sm-6 col-md-4">
+			<%= link_to dog_path(c.id), :class => "thumbnail" do	%>
+		  		<%= image_tag c.avatar_url.to_s, width: "242", height: "200" %>
+	  		<% end %>
+	  		<h3 class="caption"><%= link_to c.name, dog_path(c.id) %></h3>
+	  		</div>
+			
 
 		</div>
 
 	</div>
 
 	<% end %>
+
 
 <% end %>

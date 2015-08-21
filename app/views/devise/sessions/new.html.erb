@@ -1,0 +1,35 @@
+<div class = "general-row">
+<div class = "general-form">
+<h2>Welcome back!</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "off", autofocus: true, placeholder: "Password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="checkbox">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in", :class => "btn btn-primary btn-md" %>
+  </div>
+<% end %>
+
+   <div class = "signin-link">
+
+    <p>Forgot Your Password?</p>
+    <%= link_to "Reset Password", new_user_password_path %><br/><br/>
+    <p>Don't have an account?</p>
+    <%= link_to "Sign Up", new_user_registration_path %>
+
+  </div>
+</div>
+</div>

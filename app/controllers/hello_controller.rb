@@ -4,4 +4,5 @@ class HelloController < ApplicationController
 
   def about
   end
+
 end

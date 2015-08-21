@@ -4,7 +4,7 @@ class Search < ActiveRecord::Base
    
    dogs = Dog.all
    
-   dogs = dogs.where("location like ?", "%#{location}%") if location.present?
+   dogs = dogs.where("cast(location as text) like ?", "%#{location}%") if location.present?
    dogs = dogs.where("breed like ?", "%#{breed}%") if breed.present?
    dogs = dogs.where("age like ?", age) if age.present?
    dogs = dogs.where("gender like ?", gender) if gender.present?

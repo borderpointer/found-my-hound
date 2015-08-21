@@ -1,0 +1,25 @@
+<div class = "general-row">
+<div class = "general-form">
+<h2>Reset Password</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, placeholder: "Email"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me password reset instructions", :class=>"btn btn-primary btn-md" %>
+  </div>
+<% end %>
+   <div class = "signin-link">
+
+    <p>Already have an account?</p>
+    <%= link_to "Log In", new_user_session_path %><br><br>
+    <p>Don't have an account?</p>
+    <%= link_to "Sign Up", new_user_registration_path %>
+
+  </div>
+</div>
+</div>

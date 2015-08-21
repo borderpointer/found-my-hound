@@ -1,44 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class = "general-row">
+<br><br><br>
+<div class = "profile-container">
+<%= image_tag @dog.avatar_url.to_s, :class => "profile-img"%>
+</div>
+<div class = "general-form">
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @dog.avatar %>
-</p>
+<h2>Hi! My name is <%= @dog.name %>.</h2>
+<h4>I'm a <%= @dog.size %>, <%= @dog.age %>, <%= @dog.gender %>, <%= @dog.breed %>. I'm temporarily living somewhere at <%= @dog.location %> but I'm looking for a forever home. If you want to come hang out with me, you can talk to my awesome caretakers below.</h4><h3>I can't wait to meet you!</h3>
+<br><br>
 
-<p>
-  <strong>Location:</strong>
-  <%= @dog.location %>
-</p>
+    <a target="_blank" href="<%= @dog.contact_email %>", class="btn btn-primary btn-md" style="color: #fff; padding: 15px; width: 25vw; margin-bottom: 20px;">Contact caretaker</a>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
 
-<p>
-  <strong>Breed:</strong>
-  <%= @dog.breed %>
-</p>
+</div>
+</div>
 
-<p>
-  <strong>Age:</strong>
-  <%= @dog.age %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @dog.gender %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @dog.size %>
-</p>
-
-<p>
-  <strong>Contact email:</strong>
-  <%= @dog.contact_email %>
-</p>
-
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%#= link_to 'Edit', edit_dog_path(@dog) %>
+<%#= link_to 'Back', dogs_path %>

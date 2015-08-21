@@ -3,13 +3,14 @@
   <body>
 
   <header class = "header">
-    <div class = "container">
-      <div class = "logo"><a href="#"><img src="https://dl.dropbox.com/s/jncnv2w0t7gvjtf/logo_2.png"></a></div> 
+    <div class = "nav-container">
+      <div class = "logo"><a href="/"><img src="https://dl.dropbox.com/s/jncnv2w0t7gvjtf/logo_2.png"></a></div> 
   
       <nav class = "header-nav">
         <% if user_signed_in? %>
-        <p> Logged in as <strong><%= current_user.email %></strong></p>
-        <%#= link_to 'Edit profile', edit_user_registration_path%>
+        <p style="font-weight: 700;">Hello, <%= current_user.name %>!</p>
+        <%= link_to 'Edit Profile', edit_user_registration_path%>
+        <%= link_to 'New Search', new_search_path%>
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
         
@@ -22,16 +23,20 @@
   </header>
 
   <div class="content">
-
-    <h2 id="tagline">Found My Hound is an online database of adoptable dog that matches you with the perfect partner-in-crime.</h2>
+    <h2 id ="tagline">Find your perfect parter-in-crime.</h2>
+    <h2 id="supportline">Found My Hound matches you with cute hounds in your area that need a home. Start your search today!</h2>
 
 	    <div id="get_started">
-      	<%= link_to "Let's Get Started!", new_user_registration_path %>
+        <% if user_signed_in? %>
+        <%= link_to "Start a new search", new_search_path %>
+        <% else %>
+      	<%= link_to "Get started!", new_user_registration_path %>
+        <% end %>
 
       </div>
 
   </div>
-
+  <div id = "video_overlay"></div>
   <video autoplay muted poster="https://dl.dropbox.com/s/ib2ymrxh3xt23b7/test-background-vid-still.png" id="bgvid" loop>
 
       <source src="https://dl.dropbox.com/s/kmobgmh6lky722s/test-background-vid-short.webm" type="video/webm">
