@@ -6,7 +6,7 @@
         <%= s.label "I'm looking for a" %><br>
 
         <div class="form-group">
-          <%= s.select :size, options_for_select(@size, selected = "Small"), {:include_blank => "All"}, { :class => 'form-control' } %>
+          <%= s.select :size, options_for_select(@size, selected = "Medium"), {:include_blank => "All"}, { :class => 'form-control' } %>
         </div>
 
       <div class="form-group">
@@ -28,11 +28,11 @@
 
       <div class="form-group">
         
-        <%= s.text_field :location, autofocus: true, placeholder: "e.x: 10001" %>
+        <%= s.text_field :location, autofocus: true, placeholder: "10001" %>
       </div>
 
       <br><br>
-
+      
       <div class="actions"><%= s.submit "Search", :class => "btn btn-primary btn-md" %>
       </div>
 

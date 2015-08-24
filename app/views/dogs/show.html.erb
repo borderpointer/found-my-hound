@@ -1,4 +1,4 @@
-<div class = "general-row">
+<div class = "general-row" style="padding-bottom: 60px;">
 <br><br><br>
 <div class = "profile-container">
 <%= image_tag @dog.avatar_url.to_s, :class => "profile-img"%>
@@ -6,10 +6,12 @@
 <div class = "general-form">
 
 <h2>Hi! My name is <%= @dog.name %>.</h2>
-<h4>I'm a <%= @dog.size %>, <%= @dog.age %>, <%= @dog.gender %>, <%= @dog.breed %>. I'm temporarily living somewhere at <%= @dog.location %> but I'm looking for a forever home. If you want to come hang out with me, you can talk to my awesome caretakers below.</h4><h3>I can't wait to meet you!</h3>
+<h4>I'm a <%= @dog.size %>, <%= @dog.age %>, <%= @dog.gender %>, <%= @dog.breed %>. I'm temporarily living somewhere at <%= @dog.location %> but I'm looking for a forever home. If you want to come hang out with me, you can talk to my awesome caretakers below.</h4><br><h3>I can't wait to meet you!</h3>
 <br><br>
 
-    <a target="_blank" href="<%= @dog.contact_email %>", class="btn btn-primary btn-md" style="color: #fff; padding: 15px; width: 25vw; margin-bottom: 20px;">Contact caretaker</a>
+<div class = "filler"></div>
+
+<a target="_blank" href="<%= @dog.contact_email %>", class="btn btn-primary btn-md" style="color: #fff; padding: 15px; width: 25vw; margin-bottom: 20px;">Contact caretaker</a>
 
 
 </div>

@@ -4,7 +4,7 @@
 
 	<div class = "general-row">
 	<div class = "general-form show-form">
-		<h2>Your Fluffy Matches:</h2>
+		<h2>Your Potential Hounds:</h2>
 
 		<p class = "no-matches">We found no matches with your criteria... try searching again!</p>
 		<%= button_to "Start a new search", new_search_path, method: :get, :class => "btn btn-primary btn-md" %>
@@ -13,25 +13,28 @@
 
 <% else %>
 
-	<h2>Your Fluffy Matches:</h2>
+	<h2 class = "search-h2">Your Potential Hounds:</h2>
 
-	<% @search.search_dogs.each do |c| %>
+	<% @search.search_dogs.in_groups_of(4, false).each do |c| %>
 
-	<div class = "row">
+		<div class = "row results-row">
 
-			<div class="col-sm-6 col-md-4">
-			<%= link_to dog_path(c.id), :class => "thumbnail" do	%>
-		  		<%= image_tag c.avatar_url.to_s, width: "242", height: "200" %>
-	  		<% end %>
-	  		<h3 class="caption"><%= link_to c.name, dog_path(c.id) %></h3>
-	  		</div>
-			
+			<% c.each do |d| %>
 
-		</div>
+			<div class="col-md-3">
+
+				<%= link_to dog_path(d.id), :class => "img-responsive" do	%>
+			  		<%= image_tag d.avatar_url.to_s %>
+		  		<% end %>
+
+		  	</div>
+
+		  	<% end %>
 
 	</div>
 
 	<% end %>
 
+	<div class="divider"></div>
 
 <% end %>
