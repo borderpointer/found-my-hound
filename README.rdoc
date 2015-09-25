@@ -1,1 +1,1 @@
-demo: www.found-my-hound.herokuapp.com
+demo: http://found-my-hound.herokuapp.com/
