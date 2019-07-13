@@ -1,5 +1,9 @@
 # Found My Hound
 
+### Test User Login:
+- email: elli@test.com
+- password: password
+
 ### Built With:
 
 - Rails
